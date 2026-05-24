@@ -1,0 +1,53 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Local agent/context files
+.context/
+.gitmodules
+AGENTS.override.md
+
+# Credentials and private infrastructure material
+*.key
+*.pem
+*.p12
+*.pfx
+*.ovpn
+*.conf.private
+wg-*.conf
+id_rsa*
+id_ed25519*
+known_hosts
+.env.local
+
+# Public-project local workspace
+local/ssh/*
+!local/ssh/README.md
+local/clients/*
+!local/clients/README.md
+local/server/*
+!local/server/README.md
+local/logs/*
+!local/logs/README.md
+local/backups/*
+!local/backups/README.md
+
+# Local Codex/generated context copies
+.codex/
+
+# Editor and OS files
+.DS_Store
+.vscode/
+.idea/
+
+# Logs and runtime output
+*.log
+logs/
+tmp/
+temp/
+
+# Project artifacts that may contain secrets or generated configs
+artifacts/private/
+artifacts/generated/
+exports/
