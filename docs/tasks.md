@@ -77,3 +77,4 @@ Runbook:
 - [ ] Add GitHub issue for provider API automation, starting with Hetzner Cloud API.
 - [ ] Add a public release checklist that removes `.context`, `.codex`, `AGENTS.override.md`, private local files, and generated profiles.
 - [x] Push a clean public-safe branch to the private GitHub remote.
+- [x] Add GitHub issue and pull request templates for the future public repo.
