@@ -72,9 +72,15 @@ Runbook:
 - [x] Add agent setup instructions.
 - [x] Add security policy and publication plan.
 - [x] Add setup-script intake commands for agent/user requirements collection.
+- [x] Add GitHub issues for installer, provider API automation, stealth profiles, and public-release cleanup.
 - [ ] Promote the tested manual server setup into an idempotent one-click installer.
 - [ ] Add provider-specific validation checks.
-- [ ] Add GitHub issue for provider API automation, starting with Hetzner Cloud API.
 - [ ] Add a public release checklist that removes `.context`, `.codex`, `AGENTS.override.md`, private local files, and generated profiles.
 - [x] Push a clean public-safe branch to the private GitHub remote.
 - [x] Add GitHub issue and pull request templates for the future public repo.
+
+GitHub issues:
+- [#1 Implement idempotent one-click OpenVPN installer](https://github.com/Just-Boring-Cat/one-click-self-hosted-openvpn/issues/1)
+- [#2 Add provider API automation starting with Hetzner Cloud](https://github.com/Just-Boring-Cat/one-click-self-hosted-openvpn/issues/2)
+- [#3 Add optional stealth profiles: UDP 443, TCP 443 fallback, tls-crypt-v2](https://github.com/Just-Boring-Cat/one-click-self-hosted-openvpn/issues/3)
+- [#4 Prepare public release checklist and clean-history branch policy](https://github.com/Just-Boring-Cat/one-click-self-hosted-openvpn/issues/4)
