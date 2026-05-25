@@ -1,48 +1,68 @@
 # one-click-self-hosted-openvpn
 
 <p align="center">
-  <img alt="Visibility" src="https://img.shields.io/badge/visibility-private-555555">
-  <img alt="Status" src="https://img.shields.io/badge/status-discovery-1f6feb">
-  <img alt="License" src="https://img.shields.io/badge/license-private-lightgrey">
+  <img alt="Project" src="https://img.shields.io/badge/project-agent--ready%20OpenVPN-1f6feb">
+  <img alt="VPN" src="https://img.shields.io/badge/vpn-OpenVPN%20Community%20Edition-2ea043">
+  <img alt="Provider" src="https://img.shields.io/badge/provider-Hetzner%20tested-ff6f00">
+  <img alt="Status" src="https://img.shields.io/badge/status-active%20build-8957e5">
 </p>
 
-Agent-friendly OpenVPN Community Edition setup for a private VPS-hosted VPN.
+Set up your own private OpenVPN server on a VPS, with an AI agent guiding the configuration instead of asking you to copy random commands from a blog post.
 
-## Current Status
+This project is for people who want a small, self-hosted VPN that they control: your VPS, your SSH keys, your OpenVPN profiles, your firewall rules. The first tested deployment path is Hetzner Cloud in Germany, and the repo is being structured so more providers and operating systems can be added over time.
 
-The first Hetzner-hosted VPN server is configured and documented. The current work is turning that tested setup into a public-safe, provider-extensible one-click installer.
+## Why This Exists
 
-## Scope
+Commercial VPNs are convenient, but shared exit IPs can be noisy, blocked, or flagged by websites. A private VPS-hosted VPN gives you a dedicated server, predictable configuration, and direct control over who can connect.
 
-Current scope:
-- Maintain the local project repository.
-- Configure a private OpenVPN Community Edition server on a Hetzner Cloud VPS in Germany.
-- Expose the smallest practical public attack surface.
-- Keep private keys, client profiles, server IPs, and generated configs out of Git.
-- Build an agent-friendly public setup flow with provider modules and local-only output folders.
+This repository aims to make that setup repeatable:
 
-Not defined yet:
-- DNS, monitoring, backup, and access-control model.
-- Full idempotent one-click installer.
-- Additional provider modules beyond Hetzner.
+- Agent-led setup flow for coding and operations agents.
+- OpenVPN Community Edition, configured directly without a public admin UI.
+- Provider modules, starting with Hetzner Cloud.
+- Secure-by-default handling for SSH keys, client profiles, logs, and server notes.
+- Local output folders that keep private runtime files out of Git.
+- Documentation written so users can run the setup themselves or ask an AI agent to do it carefully.
 
-## Docs
+## What You Get
 
-- [docs/README.md](docs/README.md) - project documentation map.
-- [docs/project-definition.md](docs/project-definition.md) - current project definition and server choices.
-- [docs/agent-setup.md](docs/agent-setup.md) - AI agent setup instructions.
-- [docs/agent-playbook.md](docs/agent-playbook.md) - step-by-step agent flow.
-- [docs/openvpn-runbook.md](docs/openvpn-runbook.md) - OpenVPN server state, operations, and verification commands.
-- [docs/os-support.md](docs/os-support.md) - operating system support matrix.
-- [docs/publication-plan.md](docs/publication-plan.md) - public project packaging plan.
-- [docs/tasks.md](docs/tasks.md) - deferred and upcoming tasks.
-- [docs/decisions.md](docs/decisions.md) - decision log.
-- [docs/session-log.md](docs/session-log.md) - lightweight session history.
-- [artifacts/README.md](artifacts/README.md) - artifact and secret-handling policy.
-- [providers/README.md](providers/README.md) - provider module structure.
-- [scripts/README.md](scripts/README.md) - setup script notes.
+- A private OpenVPN server on your own VPS.
+- A generated client `.ovpn` profile for your device.
+- SSH-based administration only.
+- Minimal public exposure: SSH plus the OpenVPN port you choose.
+- Firewall and hardening guidance.
+- A repeatable setup path that can later support more providers.
 
-## Local Setup
+## Current State
+
+The first real deployment has been completed and tested on a Hetzner VPS. The current public work is turning that proven setup into a clean, agent-friendly project that can be used by other operators.
+
+Implemented now:
+
+- Agent setup contract through `.env.example`.
+- Guarded setup helper in `scripts/setup-openvpn.sh`.
+- Provider documentation for Hetzner.
+- Public-safe local folder layout.
+- OpenVPN runbook and security documentation.
+- OS support matrix instead of assuming every server is Ubuntu.
+
+Planned next:
+
+- Full provider modules.
+- More operating system modules.
+- More idempotent setup steps.
+- Optional harder-to-detect OpenVPN profiles such as UDP 443, TCP 443 fallback, and stronger TLS wrapping.
+- Provider API automation where supported.
+
+## Quick Start For An AI Agent
+
+Give your agent this instruction:
+
+```text
+Use this repository to configure my private OpenVPN server. Read docs/agent-playbook.md and docs/agent-setup.md first. Help me fill .env from .env.example, inspect the server over SSH, choose the correct provider and OS path, run the setup helpers when needed, and place generated client profiles only under local/clients/.
+```
+
+The helper script supports the early setup flow:
 
 ```bash
 cp .env.example .env
@@ -53,14 +73,83 @@ scripts/setup-openvpn.sh --inspect
 scripts/setup-openvpn.sh --plan
 ```
 
-Private runtime files belong under `local/`.
+The script is intentionally not the whole product. The agent should read the docs, inspect the server, choose the right path, run commands deliberately, and stop when a security-sensitive decision needs operator confirmation.
 
-## Confidentiality And Safety
+## What The User Must Provide
 
-Do not commit credentials, VPN keys, VPS IP addresses, client profiles, private DNS records, provider tokens, logs with client addresses, or generated server configuration containing secrets.
+- VPS provider.
+- Server public IP address or hostname.
+- SSH user.
+- SSH private key path.
+- Operating system and version.
+- Desired first OpenVPN client name.
+- Whether the provider firewall is already configured.
 
-Private runtime material belongs under ignored paths such as `local/` and `artifacts/private/`.
+Real values belong in `.env`, which is ignored by Git.
+
+## Security Model
+
+This project is designed for a small private VPN, not a public VPN service.
+
+Defaults and guardrails:
+
+- No public OpenVPN admin UI.
+- No provider tokens committed to the repo.
+- No generated `.ovpn` profiles committed to the repo.
+- No SSH private keys committed to the repo.
+- No real server IPs committed to public docs.
+- SSH access is verified before hardening.
+- The OS is inspected before package installation.
+- Private runtime material goes under ignored `local/` paths.
+
+This setup does not guarantee anonymity, legal compliance, or protection from a compromised VPS provider, client device, or operator account. Read [SECURITY.md](SECURITY.md) before using this on an important server.
+
+## Repository Layout
+
+```text
+.
++-- .env.example              # public input contract
++-- docs/                     # runbooks, agent instructions, decisions
++-- local/                    # ignored private runtime workspace
+|   +-- ssh/                  # SSH keys
+|   +-- clients/              # generated .ovpn profiles
+|   +-- server/               # local inspection notes
+|   +-- logs/                 # local setup logs
+|   +-- backups/              # local-only backups
++-- providers/                # provider-specific instructions
+|   +-- hetzner/
+|   +-- _template/
++-- scripts/
+    +-- setup-openvpn.sh      # guarded helper used by the agent
+```
+
+## Documentation
+
+- [docs/agent-playbook.md](docs/agent-playbook.md) - step-by-step agent workflow.
+- [docs/agent-setup.md](docs/agent-setup.md) - required inputs, private output paths, and execution rules.
+- [docs/openvpn-runbook.md](docs/openvpn-runbook.md) - OpenVPN operations and verification.
+- [docs/os-support.md](docs/os-support.md) - supported and planned operating systems.
+- [providers/README.md](providers/README.md) - provider module structure.
+- [providers/hetzner/README.md](providers/hetzner/README.md) - Hetzner setup notes.
+- [scripts/README.md](scripts/README.md) - setup helper details.
+- [SECURITY.md](SECURITY.md) - security boundaries and reporting guidance.
+
+## Roadmap
+
+The project is being built around GitHub issues so users and contributors can follow what is ready and what still needs work:
+
+- Agent-led OpenVPN setup modules.
+- Provider API automation starting with Hetzner Cloud.
+- Optional stealth-oriented OpenVPN profiles.
+- OS modules beyond Ubuntu and Debian.
+- Public release checklist and clean-history policy.
+
+## Professional Help
+
+This repository is intended to be useful as a free self-hosted setup guide. Some users will still want help with provider-specific setup, migration, firewall review, hardening, client profile management, or troubleshooting.
+
+The service funnel, intake forms, pricing pages, and support workflow are intentionally kept outside this repository. This repo stays focused on the open setup instructions and implementation.
 
 ## License
 
-Private project. See [LICENSE.md](LICENSE.md).
+License is not finalized yet. Until a public license is selected, all rights are reserved. See [LICENSE.md](LICENSE.md).
