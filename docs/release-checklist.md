@@ -1,12 +1,10 @@
-# Publication Plan
+# Release Checklist
 
 ## Public Project Goal
 
-Publish a public, agent-friendly OpenVPN setup repository that helps operators configure their own private VPS-hosted VPN with secure defaults and clear provider modules.
+Maintain a public, agent-friendly OpenVPN setup repository that helps operators configure their own private VPS-hosted VPN with secure defaults and clear provider modules.
 
-The public project should be useful for self-service users while supporting paid help for custom setup, provider migration, hardening review, and maintenance.
-
-The repository is intended to be public under the MIT License so users can use it, fork it, adapt it, and contribute provider, OS, and VPN configuration modules.
+The repository is public under the MIT License so users can use it, fork it, adapt it, and contribute provider, OS, and VPN configuration modules.
 
 ## Public Folder Structure
 
@@ -19,7 +17,7 @@ The repository is intended to be public under the MIT License so users can use i
 |   +-- agent-setup.md
 |   +-- firewall.md
 |   +-- openvpn-runbook.md
-|   +-- publication-plan.md
+|   +-- release-checklist.md
 +-- local/
 |   +-- ssh/
 |   +-- clients/
@@ -60,22 +58,13 @@ The agent must:
 - avoid broad SSH or public admin UI exposure,
 - document public-safe improvements back into repo docs.
 
-## Monetization Path
+## Community Contribution Path
 
-Free public repo:
 - Provider-specific instructions.
 - Secure default OpenVPN setup.
 - Agent setup guide.
 - Troubleshooting and verification commands.
-
-Paid services:
-- Configure the VPN on a customer's VPS.
-- Add another provider module.
-- Review and harden an existing setup.
-- Create client profiles and revocation workflow.
-- Provide maintenance and patching support.
-
-The website funnel, intake forms, pricing pages, and service landing pages will live in a separate website project, not this repository.
+- Provider, OS, firewall, and OpenVPN profile contributions.
 
 ## Public Repository Controls
 
@@ -90,5 +79,5 @@ The website funnel, intake forms, pricing pages, and service landing pages will 
 - Keep `.context`, `.gitmodules`, `.codex`, and `AGENTS.override.md` out of the public branch unless explicitly approved.
 - Verify no private files exist in Git history for the public branch before each release.
 - Keep README language public and user-facing.
-- Maintain issue templates for bug reports, provider requests, and paid support inquiries.
+- Maintain issue templates for bug reports and provider requests.
 - Add a tested release package that excludes local/private files.

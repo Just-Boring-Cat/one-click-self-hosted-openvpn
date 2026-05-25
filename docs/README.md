@@ -11,11 +11,10 @@ Project-specific documentation lives here.
 - [detection-and-stealth.md](detection-and-stealth.md) - VPN detectability, stealth options, and performance tradeoffs.
 - [openvpn-runbook.md](openvpn-runbook.md) - OpenVPN server state, operations, and verification commands.
 - [os-support.md](os-support.md) - supported operating systems and agent rules.
-- [publication-plan.md](publication-plan.md) - public repo structure, agent experience, and monetization path.
+- [release-checklist.md](release-checklist.md) - public repo structure, agent experience, and release controls.
 - [server-access.md](server-access.md) - SSH key paths and connection command template.
 - [tasks.md](tasks.md) - implementation, firewall, and hardening backlog.
 - [decisions.md](decisions.md) - project decision log.
-- [session-log.md](session-log.md) - session summaries, decisions, open questions, and next steps.
 
 ## Planned During Project Definition
 

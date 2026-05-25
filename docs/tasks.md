@@ -57,12 +57,6 @@ Runbook:
 - [ ] Evaluate stunnel/obfs-style transport as an advanced module, not the default.
 - [ ] Add client-side DNS/WebRTC leak test instructions.
 
-## Maintainer Monetization Workflow Refinement
-
-- Refine the maintainer workflow while this VPN project is converted into a public, one-shot setup repo.
-- Capture reusable patterns for public/private repo separation, safe one-click VPS automation, paid setup service positioning, sponsor/support calls to action, and customer handoff boundaries.
-- Promote reusable improvements into the maintainer's shared local guidance outside the public repo.
-
 ## Public Project Packaging
 
 - [x] Add `.env.example` as the public input contract.
@@ -77,8 +71,8 @@ Runbook:
 - [ ] Convert the tested manual setup into agent-led OS/provider modules.
 - [ ] Add provider-specific validation checks.
 - [ ] Add a public release checklist that removes `.context`, `.codex`, `AGENTS.override.md`, private local files, and generated profiles.
-- [x] Push a clean public-safe branch to the private GitHub remote.
-- [x] Add GitHub issue and pull request templates for the future public repo.
+- [x] Push a clean public-safe branch to the GitHub remote.
+- [x] Add GitHub issue and pull request templates for the public repo.
 
 GitHub issues:
 - [#1 Build agent-led OpenVPN setup modules](https://github.com/Just-Boring-Cat/one-click-self-hosted-openvpn/issues/1)
