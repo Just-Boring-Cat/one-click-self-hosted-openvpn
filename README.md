@@ -1,4 +1,4 @@
-# one-click-self-hosted-openvpn
+<h1 align="center">one-click-self-hosted-openvpn</h1>
 
 <p align="center">
   <img alt="Project" src="https://img.shields.io/badge/project-agent--ready%20OpenVPN-1f6feb">
