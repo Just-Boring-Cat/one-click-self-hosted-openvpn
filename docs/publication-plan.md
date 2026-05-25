@@ -6,29 +6,31 @@ Publish a public, agent-friendly OpenVPN setup repository that helps operators c
 
 The public project should be useful for self-service users while supporting paid help for custom setup, provider migration, hardening review, and maintenance.
 
+The repository is intended to be public under the MIT License so users can use it, fork it, adapt it, and contribute provider, OS, and VPN configuration modules.
+
 ## Public Folder Structure
 
 ```text
 .
-├── .env.example
-├── README.md
-├── SECURITY.md
-├── docs/
-│   ├── agent-setup.md
-│   ├── firewall.md
-│   ├── openvpn-runbook.md
-│   └── publication-plan.md
-├── local/
-│   ├── ssh/
-│   ├── clients/
-│   ├── server/
-│   ├── logs/
-│   └── backups/
-├── providers/
-│   ├── hetzner/
-│   └── _template/
-└── scripts/
-    └── setup-openvpn.sh
++-- .env.example
++-- README.md
++-- SECURITY.md
++-- docs/
+|   +-- agent-setup.md
+|   +-- firewall.md
+|   +-- openvpn-runbook.md
+|   +-- publication-plan.md
++-- local/
+|   +-- ssh/
+|   +-- clients/
+|   +-- server/
+|   +-- logs/
+|   +-- backups/
++-- providers/
+|   +-- hetzner/
+|   +-- _template/
++-- scripts/
+    +-- setup-openvpn.sh
 ```
 
 ## Private Workspace
@@ -75,10 +77,18 @@ Paid services:
 
 The website funnel, intake forms, pricing pages, and service landing pages will live in a separate website project, not this repository.
 
-## Before Publishing
+## Public Repository Controls
+
+- Main branch changes should go through pull requests.
+- Branch protection should prevent force pushes and deletion.
+- Pull requests should use the repository PR template.
+- Provider and OS contributions should identify tested versions and limitations.
+- Security-sensitive reports should follow `SECURITY.md`.
+
+## Public Release Checklist
 
 - Keep `.context`, `.gitmodules`, `.codex`, and `AGENTS.override.md` out of the public branch unless explicitly approved.
-- Verify no private files exist in Git history for the public branch.
-- Replace private-project README language with public user-facing copy.
-- Add issue templates for bug reports, provider requests, and paid support inquiries.
+- Verify no private files exist in Git history for the public branch before each release.
+- Keep README language public and user-facing.
+- Maintain issue templates for bug reports, provider requests, and paid support inquiries.
 - Add a tested release package that excludes local/private files.

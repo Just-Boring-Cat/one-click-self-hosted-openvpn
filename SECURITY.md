@@ -2,13 +2,13 @@
 
 ## Supported Scope
 
-This repository currently documents and automates a private OpenVPN Community Edition setup on Ubuntu 24.04 LTS.
+This repository documents and automates private OpenVPN Community Edition setups on VPS providers.
 
-The first tested provider is Hetzner Cloud. Other provider modules are community extensibility targets until they are explicitly marked tested.
+The first tested provider is Hetzner Cloud. The first tested operating system is Ubuntu 24.04 LTS. Other provider and OS modules are community extensibility targets until they are explicitly marked tested.
 
 ## Reporting A Vulnerability
 
-If this repository becomes public, report security concerns through the repository's configured private vulnerability reporting channel or the maintainer contact listed on the project website.
+Report security concerns through the repository's configured private vulnerability reporting channel, if available. If private vulnerability reporting is not available, contact the maintainer without publishing exploit details in an issue.
 
 Do not open public issues containing:
 
