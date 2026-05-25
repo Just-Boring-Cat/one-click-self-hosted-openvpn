@@ -48,7 +48,7 @@ Expected private outputs:
 The target user should be able to ask an AI agent:
 
 ```text
-Use this repo to configure my OpenVPN server. Read docs/agent-setup.md, fill .env from my VPS details, run the setup script, and place my client profile in local/clients/.
+Use this repo to configure my OpenVPN server. Read docs/agent-playbook.md, help me fill .env, inspect my VPS, choose the correct OS/provider path, and place my client profile in local/clients/.
 ```
 
 The agent must:
@@ -72,6 +72,8 @@ Paid services:
 - Review and harden an existing setup.
 - Create client profiles and revocation workflow.
 - Provide maintenance and patching support.
+
+The website funnel, intake forms, pricing pages, and service landing pages will live in a separate website project, not this repository.
 
 ## Before Publishing
 

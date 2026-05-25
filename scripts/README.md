@@ -8,9 +8,11 @@ Scripts in this folder are intended to become the public, repeatable setup inter
 ./scripts/setup-openvpn.sh --requirements
 ./scripts/setup-openvpn.sh --collect
 ./scripts/setup-openvpn.sh --check
+./scripts/setup-openvpn.sh --inspect
+./scripts/setup-openvpn.sh --plan
 ```
 
-The current script shows setup requirements, collects `.env` values, validates SSH access, then points to the tested runbook. The next implementation step is to promote the manually validated Hetzner setup into an idempotent installer.
+The current script shows setup requirements, collects `.env` values, validates SSH access, inspects the server, and prints an agent execution plan. The setup itself remains agent-led so the agent can adapt to provider and OS differences.
 
 ## Script Rules
 
@@ -20,3 +22,4 @@ The current script shows setup requirements, collects `.env` values, validates S
 - Do not print private keys or full client profiles.
 - Keep provider-specific logic in `providers/` or clearly marked sections.
 - Keep common OpenVPN setup provider-neutral where practical.
+- Do not assume Ubuntu unless inspection confirms an Ubuntu/Debian-family path.

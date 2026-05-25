@@ -31,7 +31,9 @@ Not defined yet:
 - [docs/README.md](docs/README.md) - project documentation map.
 - [docs/project-definition.md](docs/project-definition.md) - current project definition and server choices.
 - [docs/agent-setup.md](docs/agent-setup.md) - AI agent setup instructions.
+- [docs/agent-playbook.md](docs/agent-playbook.md) - step-by-step agent flow.
 - [docs/openvpn-runbook.md](docs/openvpn-runbook.md) - OpenVPN server state, operations, and verification commands.
+- [docs/os-support.md](docs/os-support.md) - operating system support matrix.
 - [docs/publication-plan.md](docs/publication-plan.md) - public project packaging plan.
 - [docs/tasks.md](docs/tasks.md) - deferred and upcoming tasks.
 - [docs/decisions.md](docs/decisions.md) - decision log.
@@ -47,6 +49,8 @@ cp .env.example .env
 scripts/setup-openvpn.sh --requirements
 scripts/setup-openvpn.sh --collect
 scripts/setup-openvpn.sh --check
+scripts/setup-openvpn.sh --inspect
+scripts/setup-openvpn.sh --plan
 ```
 
 Private runtime files belong under `local/`.

@@ -18,6 +18,8 @@
 - Documented VPN detectability, stealth options, and performance tradeoffs.
 - Prepared public-facing README and ignores so local agent context stays out of the GitHub remote.
 - Created the private GitHub repository and pushed a clean public-safe `main` branch.
+- Reframed setup as AI-agent-led execution with scripts as intake, inspection, and planning helpers.
+- Added OS support rules so agents do not assume every VPS is Ubuntu.
 
 Open questions:
 - Decide whether backups are enabled in Hetzner or handled separately.
