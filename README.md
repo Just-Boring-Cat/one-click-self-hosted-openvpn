@@ -154,12 +154,6 @@ All changes to `main` should go through pull requests. Provider and OS contribut
 
 Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the provider template in [providers/_template/](providers/_template/).
 
-## Professional Help
-
-This repository is intended to be useful as a free self-hosted setup guide. Some users will still want help with provider-specific setup, migration, firewall review, hardening, client profile management, or troubleshooting.
-
-The service funnel, intake forms, pricing pages, and support workflow are intentionally kept outside this repository. This repo stays focused on the open setup instructions and implementation.
-
 ## License
 
 MIT License. See [LICENSE.md](LICENSE.md).
