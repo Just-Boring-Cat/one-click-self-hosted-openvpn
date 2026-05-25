@@ -1,0 +1,13 @@
+# Require repository-owner review for all changes.
+* @Just-Boring-Cat
+
+# High-risk paths are listed explicitly for readability.
+.github/ @Just-Boring-Cat
+.github/workflows/ @Just-Boring-Cat
+scripts/ @Just-Boring-Cat
+providers/ @Just-Boring-Cat
+docs/agent-setup.md @Just-Boring-Cat
+docs/agent-playbook.md @Just-Boring-Cat
+docs/pr-review-security.md @Just-Boring-Cat
+SECURITY.md @Just-Boring-Cat
+CONTRIBUTING.md @Just-Boring-Cat

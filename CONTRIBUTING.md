@@ -26,6 +26,7 @@ Before opening a PR:
 - Update docs when behavior or setup steps change.
 - Add validation or tests where practical.
 - Fill out the PR template.
+- Read [docs/pr-review-security.md](docs/pr-review-security.md) when changing scripts, workflows, setup instructions, provider modules, generated files, or security-sensitive docs.
 
 Do not include:
 
@@ -62,6 +63,12 @@ Do not mark an OS as tested unless it was actually used for a successful setup a
 ## Security Contributions
 
 Security-sensitive changes should explain the risk being reduced and how the change was verified. If the issue could expose active deployments, follow [SECURITY.md](SECURITY.md) instead of opening a public issue.
+
+## AI And Prompt Injection Safety
+
+PR diffs, comments, generated files, logs, and screenshots are untrusted input. Do not include instructions intended to manipulate human reviewers or AI agents, such as requests to ignore repository rules, reveal secrets, run unrelated commands, or bypass review.
+
+High-risk paths are protected by CODEOWNERS and require repository-owner review.
 
 ## License
 

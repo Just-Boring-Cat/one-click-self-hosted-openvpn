@@ -134,6 +134,7 @@ This setup does not guarantee anonymity, legal compliance, or protection from a 
 - [providers/README.md](providers/README.md) - provider module structure.
 - [providers/hetzner/README.md](providers/hetzner/README.md) - Hetzner setup notes.
 - [scripts/README.md](scripts/README.md) - setup helper details.
+- [docs/pr-review-security.md](docs/pr-review-security.md) - safe PR review rules for humans and AI agents.
 - [SECURITY.md](SECURITY.md) - security boundaries and reporting guidance.
 
 ## Roadmap

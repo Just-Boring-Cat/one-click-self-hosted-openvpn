@@ -15,6 +15,8 @@
 - [ ] No `.context`, `.codex`, `AGENTS.override.md`, or local operator files are included.
 - [ ] Setup changes fail closed on missing or unsafe inputs.
 - [ ] Documentation names tested providers, OS versions, and limitations.
+- [ ] PR content does not include instructions intended to manipulate reviewers or AI agents.
+- [ ] If scripts, workflows, provider modules, generated files, or text-heavy docs changed, I reviewed [docs/pr-review-security.md](../docs/pr-review-security.md).
 
 ## Verification
 
