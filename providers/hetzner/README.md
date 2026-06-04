@@ -5,7 +5,8 @@ Hetzner Cloud is the first tested provider for this project.
 ## Tested Baseline
 
 - Location: Germany, Falkenstein.
-- Server type: CX23.
+- Server type: shared x86 4 GB class; exact Hetzner plan name may vary.
+- Resources: 2 vCPU, 4 GB RAM, approximately 80 GB SSD.
 - Architecture: x86 Intel/AMD.
 - OS: Ubuntu 24.04 LTS.
 - Networking: public IPv4 and public IPv6.

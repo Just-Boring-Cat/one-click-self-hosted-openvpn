@@ -4,6 +4,11 @@
 
 The VPS is configured as an OpenVPN Community Edition server on Ubuntu 24.04 LTS.
 
+Current verified resources:
+- 2 vCPU.
+- Approximately 4 GB RAM.
+- Approximately 80 GB SSD.
+
 Installed services:
 - `openvpn-server@server`
 - `nftables`

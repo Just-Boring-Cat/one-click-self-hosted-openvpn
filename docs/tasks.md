@@ -4,7 +4,7 @@
 
 - Create a Hetzner Cloud server in Germany.
 - Use Ubuntu 24.04 LTS.
-- Use CX23 x86 Intel/AMD.
+- Use a shared x86 4 GB class server: 2 vCPU, 4 GB RAM, approximately 80 GB SSD.
 - Enable public IPv4 and public IPv6.
 - Add the project SSH public key during server creation.
 - Do not paste secrets or VPN certificates into cloud-init.

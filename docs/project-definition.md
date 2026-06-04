@@ -9,8 +9,8 @@ Create a private VPN hosted on a Hetzner Cloud VPS in Germany, using OpenVPN Com
 - Provider: Hetzner Cloud.
 - Region: Germany.
 - Location: Falkenstein is acceptable; Nuremberg is also acceptable if capacity or latency is better.
-- Server type: CX23, shared cost-optimized.
-- CPU/RAM/Disk: 2 vCPU, 4 GB RAM, 40 GB SSD.
+- Server type: Hetzner shared x86 4 GB class; exact plan name may vary in the console.
+- CPU/RAM/Disk: 2 vCPU, 4 GB RAM, approximately 80 GB SSD.
 - Architecture: x86 Intel/AMD.
 - Operating system: Ubuntu 24.04 LTS.
 - Networking: public IPv4 and public IPv6.

@@ -16,6 +16,14 @@ Rationale: 2 vCPU, 4 GB RAM, and 40 GB disk are sufficient for the initial priva
 
 Alternatives: Smaller server if available, larger shared server for more clients, or dedicated vCPU if sustained CPU load becomes a problem.
 
+## 2026-06-04: Use Current Hetzner 4 GB Shared x86 Server
+
+Decision: Recreate the VPN on a current Hetzner shared x86 4 GB class server.
+
+Rationale: The recreated server provides the same CPU and RAM class as the original setup, with a larger disk. Live resources verified from the server are 2 vCPU, about 4 GB RAM, and about 80 GB SSD.
+
+Alternatives: Keep the older CX23 naming where available, use a smaller instance for a single-user VPN, or move to dedicated vCPU if sustained encryption throughput becomes a bottleneck.
+
 ## 2026-05-24: Use Ubuntu 24.04 LTS
 
 Decision: Use Ubuntu 24.04 LTS for the first production setup.
